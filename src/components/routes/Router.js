@@ -7,7 +7,7 @@ import MessageScreen from '../../sections/messageScreen/MessageScreen';
 export default function Router() {
   const route = useRoutes([
     {
-      path:'',
+      path:'/',
       element:<HomePage />
     },
     {
