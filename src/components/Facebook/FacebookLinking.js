@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, Stack, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function FacebookLinking() {
+  const navigate = useNavigate();
+  const [facebookIntegrated, setFacebookIntergrated] = useState(true);
+
+  const deleteFacebookIntegration = () => {
+    setFacebookIntergrated(false);
+  };
+  const connectFacebookPage = () => {
+    setFacebookIntergrated(true);
+  };
+  const replyToMessages = () => {
+      window.location.href = "messages"
+  };
   return (
     <Box className="loginBox  justifyCenter alignCenter">
       <Box className="whiteBox">
@@ -27,7 +40,7 @@ export default function FacebookLinking() {
               Facebook Page Integration
             </Typography>
           </Box>
-          {false ? (
+          {!facebookIntegrated ? (
             <Box
               sx={{
                 my: 2,
@@ -37,9 +50,9 @@ export default function FacebookLinking() {
                 variant="contained"
                 sx={{
                   width: "100%",
-                  textTransform:"none"
-
+                  textTransform: "none",
                 }}
+                onClick={() => connectFacebookPage()}
               >
                 Connect Page
               </Button>
@@ -49,26 +62,27 @@ export default function FacebookLinking() {
               sx={{
                 my: 2,
               }}
-              spacing = {2}
+              spacing={2}
             >
-            <Box className='row'>
-            <Typography>
-              Integrated Page: &nbsp;
-            </Typography>
-            <Typography sx={{
-              fontWeight:"bold"
-            }}>
-              Amazon Business
-            </Typography>
-            </Box>
-            
+              <Box className="row">
+                <Typography>Integrated Page: &nbsp;</Typography>
+                <Typography
+                  sx={{
+                    fontWeight: "bold",
+                  }}
+                >
+                  Amazon Business
+                </Typography>
+              </Box>
+
               <Button
                 variant="contained"
                 color="error"
                 sx={{
                   width: "100%",
-                  textTransform:"none",
+                  textTransform: "none",
                 }}
+                onClick={() => deleteFacebookIntegration()}
               >
                 Delete Integration
               </Button>
@@ -76,8 +90,9 @@ export default function FacebookLinking() {
                 variant="contained"
                 sx={{
                   width: "100%",
-                  textTransform:"none"
+                  textTransform: "none",
                 }}
+                onClick={() => replyToMessages()}
               >
                 Reply to Messages
               </Button>

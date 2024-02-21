@@ -37,3 +37,13 @@ code {
   display: flex;
   align-items: center;
 }
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justifySpaceBetween{
+  display: flex;
+  justify-content: space-between;
+}
