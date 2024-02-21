@@ -22,6 +22,8 @@ export default function MessageCard() {
           flex: 0.5,
           p: 2,
           background: "white",
+          border:"1px solid #D9D9D9",
+
         }}
       >
         <Typography sx={{ fontWeight: "bold" }}>

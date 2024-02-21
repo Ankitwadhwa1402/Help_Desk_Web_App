@@ -8,18 +8,19 @@ export default function SelectedUserDetails() {
     (state) => state.agentSlice.selectedUserDetails
   );
 
-
   return (
     <Stack
       className="column"
       sx={{
         height: "100%",
+        border: "1px solid #D9D9D9",
       }}
     >
       <Stack
         className="alignCenter justifyCenter"
         sx={{
           flex: 4,
+          borderBottom: "1px solid #D9D9D9",
         }}
       >
         <Avatar
@@ -28,20 +29,23 @@ export default function SelectedUserDetails() {
             mb: 2,
           }}
         />
-        <Typography sx={{
-          fontWeight:'bold'
-        }}>{selectedUserDetails?.name}</Typography>
+        <Typography
+          sx={{
+            fontWeight: "bold",
+          }}
+        >
+          {selectedUserDetails?.name}
+        </Typography>
         <Box className="row ">
-          <Box 
-
+          <Box
             sx={{
-              width:'5px',
-              height:'5px',
-              background:"grey",
-              borderRadius:'50%',
-              display:'flex',
-              alignSelf:'center',
-              mr:0.5,
+              width: "5px",
+              height: "5px",
+              background: "grey",
+              borderRadius: "50%",
+              display: "flex",
+              alignSelf: "center",
+              mr: 0.5,
             }}
           />
           <Typography
@@ -65,12 +69,21 @@ export default function SelectedUserDetails() {
             variant="outlined"
             sx={{
               mr: 2,
+              color: "darkGrey",
+              borderColor: "#D9D9D9",
             }}
             startIcon={<Call />}
           >
             Call
           </Button>
-          <Button variant="outlined" startIcon={<AccountCircleRounded />}>
+          <Button
+            sx={{
+              color: "darkGrey",
+              borderColor: "#D9D9D9",
+            }}
+            variant="outlined"
+            startIcon={<AccountCircleRounded />}
+          >
             Profile
           </Button>
         </Box>
@@ -87,6 +100,7 @@ export default function SelectedUserDetails() {
             background: "white",
             p: 2,
             borderRadius: 2,
+            border: "1px solid #D9D9D9",
           }}
         >
           <Box
@@ -99,15 +113,15 @@ export default function SelectedUserDetails() {
           <Stack spacing={0.5}>
             <Box className="row justifySpaceBetween">
               <Typography>Email:</Typography>
-              <Typography>amit@richpanel.com</Typography>
+              <Typography>{selectedUserDetails?.email}</Typography>
             </Box>
             <Box className="row justifySpaceBetween">
               <Typography>First Name:</Typography>
-              <Typography>amit</Typography>
+              <Typography>{selectedUserDetails?.firstName}</Typography>
             </Box>
             <Box className="row justifySpaceBetween">
               <Typography>Last Name:</Typography>
-              <Typography>RG</Typography>
+              <Typography>{selectedUserDetails?.lastName}</Typography>
             </Box>
             <Box>
               <Typography

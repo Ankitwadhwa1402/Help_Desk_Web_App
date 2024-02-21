@@ -23,6 +23,7 @@ export default function UserCard({ userDetails }) {
           background: "#D9D9D9",
         }),
         p: 2,
+        borderBottom:"1px solid #D9D9D9",
       }}
       onClick={() => handleSelectUserCardDetails()}
     >
@@ -36,6 +37,7 @@ export default function UserCard({ userDetails }) {
             sx={{
               ml: -1,
             }}
+          disabled
           />
         </Box>
         <Stack
