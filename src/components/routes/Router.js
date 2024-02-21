@@ -7,7 +7,7 @@ import MessageScreen from '../../sections/messageScreen/MessageScreen';
 export default function Router() {
   const route = useRoutes([
     {
-      path:'/',
+      path:'*',
       element:<HomePage />
     },
     {
@@ -15,7 +15,7 @@ export default function Router() {
       element:<FacebookLinking />
     },
     {
-      path:'/messages',
+      path:'/facebook-link/messages',
       element:<MessageScreen />
     }
 

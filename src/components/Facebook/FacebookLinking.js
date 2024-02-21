@@ -13,7 +13,7 @@ export default function FacebookLinking() {
     setFacebookIntergrated(true);
   };
   const replyToMessages = () => {
-      window.location.href = "messages"
+      navigate("messages")
   };
   return (
     <Box className="loginBox  justifyCenter alignCenter">
